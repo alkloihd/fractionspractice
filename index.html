@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Math Fractions/Decimals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen">
+            <h1>Morse Math Fractions/Decimals</h1>
+            <p>Select your grade to begin:</p>
+            <div class="button-group">
+                <button class="grade-button" onclick="startGame(5)">Grade 5</button>
+                <button class="grade-button" onclick="startGame(6)">Grade 6</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen" style="display:none;">
+            <div id="header">
+                <span id="grade-level">Grade</span>
+                <span id="score">Score: 0</span>
+                <span id="question-number">Question 1 of 20</span>
+            </div>
+            <div id="question-area">
+                <p id="question">Question will appear here</p>
+            </div>
+            <div id="options-area">
+                <!-- Option boxes will be dynamically inserted here -->
+            </div>
+            <div class="button-group">
+                <button id="submit-button" class="action-button" onclick="submitAnswer()" disabled>Submit Answer</button>
+                <button id="hint-button" class="action-button" onclick="showHint()">Hint</button>
+            </div>
+        </div>
+
+        <!-- Feedback Popup -->
+        <div id="feedback-popup" class="popup" style="display:none;">
+            <div class="popup-content">
+                <span id="feedback-icon" class="feedback-icon"></span>
+                <p id="feedback-message">Feedback Message</p>
+                <div class="button-group">
+                    <button class="popup-button" onclick="retryQuestion()">Retry</button>
+                    <button class="popup-button" onclick="nextQuestion()">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen" style="display:none;">
+            <h2>Congratulations!</h2>
+            <p id="final-score">Your final score is: 0 out of 20</p>
+            <button class="action-button" onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
